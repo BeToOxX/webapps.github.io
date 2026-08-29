@@ -62,12 +62,16 @@ Windows
 
 La versión vulnerable permite comprobar fallas de seguridad de manera controlada, mientras que la versión segura permite repetir las mismas pruebas y verificar las mitigaciones implementadas.
 
-## Código QR del sitio
+<h2>Código QR del sitio</h2>
 
 <div align="center">
 
-Escanea el siguiente código para abrir la documentación:
+<h3>Accede a la documentación</h3>
 
-<img src="img/qr_docs.png" alt="Código QR del sitio" width="220">
+<p>Escanea el siguiente código QR desde tu dispositivo móvil.</p>
+
+<img src="img/qr_docs.png" alt="Código QR de VaultStore" width="240">
+
+<p><strong>VaultStore Web Security Lab</strong></p>
 
 </div>
