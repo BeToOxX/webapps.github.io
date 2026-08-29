@@ -1,82 +1,62 @@
-# OWASP ZAP
+# Análisis con OWASP ZAP
 
-## ¿Qué es OWASP ZAP?
+## 14. Análisis automatizado de VaultStore Vulnerable
 
-**OWASP ZAP** significa **OWASP Zed Attack Proxy**.
+Abrir **OWASP ZAP**.
 
-Es una herramienta de código abierto diseñada para analizar la seguridad de aplicaciones web.
-
-Puede actuar como intermediario entre el navegador y el servidor, permitiendo observar las solicitudes y respuestas HTTP.
-
----
-
-## Funciones principales
-
-OWASP ZAP permite:
-
-- Interceptar solicitudes.
-- Analizar respuestas.
-- Ejecutar análisis pasivos.
-- Realizar escaneos automatizados.
-- Examinar encabezados HTTP.
-- Identificar configuraciones inseguras.
-- Analizar cookies.
-- Detectar posibles vulnerabilidades.
-
----
-
-## Uso en el laboratorio
-
-La aplicación VaultStore puede ejecutarse localmente y posteriormente analizarse desde ZAP.
-
-Ejemplo:
+En la pantalla principal seleccionar:
 
 ```text
-http://127.0.0.1:5000
+Inicio Rápido
+→ Escaneo Automatizado
 ```
 
-Desde OWASP ZAP se puede navegar por la aplicación y observar los resultados encontrados.
+### 14.1 URL objetivo
 
----
+Durante la práctica:
 
-## Alertas
+```text
+http://172.22.136.16:5000
+```
 
-ZAP clasifica los resultados de acuerdo con diferentes niveles de riesgo.
+Si la dirección de WSL es diferente, utilizar la IP obtenida con:
 
-Por ejemplo:
+```bash
+hostname -I
+```
 
-- Informativo.
-- Bajo.
-- Medio.
-- Alto.
+### 14.2 Configuración utilizada
 
-No todas las alertas representan automáticamente una vulnerabilidad explotable.
+```text
+Política: Dev Standard
+Spider tradicional: Activado
+Modern Spider: Chrome
+```
 
-Cada resultado debe ser analizado para determinar:
+Iniciar el análisis y esperar a que ZAP finalice el recorrido y las pruebas.
 
-- El contexto.
-- La funcionalidad afectada.
-- El impacto.
-- La probabilidad.
-- Las medidas de mitigación.
+### 14.3 Hallazgos principales
 
----
+En la aplicación vulnerable se analizaron hallazgos como:
 
-## Análisis pasivo
+- Cross-Site Scripting.
+- Inyección SQL.
+- Ausencia de tokens Anti-CSRF.
+- CSP no configurada.
+- Falta de Anti-Clickjacking.
+- Divulgación de información del servidor.
+- Falta de `X-Content-Type-Options`.
 
-Durante el análisis pasivo, ZAP examina las solicitudes y respuestas sin modificar activamente el comportamiento de la aplicación.
+### 14.4 SQL Injection detectada por ZAP
 
-Puede identificar aspectos como:
+ZAP identificó puntos de entrada relacionados con:
 
-- Encabezados faltantes.
-- Cookies inseguras.
-- Información expuesta.
-- Configuraciones HTTP.
+```text
+GET /catalog (q)
+POST /login (username)
+POST /login (password)
+```
 
----
+### 14.5 Interpretación
 
-## Importancia
-
-Las herramientas automatizadas son útiles para apoyar una auditoría, pero no sustituyen completamente el análisis manual.
-
-El resultado debe ser interpretado por una persona que comprenda el funcionamiento de la aplicación.
+Los resultados de una herramienta automatizada deben revisarse manualmente. La existencia de una alerta no sustituye la validación técnica del hallazgo.

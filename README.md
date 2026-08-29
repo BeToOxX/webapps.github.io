@@ -1,25 +1,34 @@
 # VaultStore Web Security Lab
 
-Repositorio correspondiente a la documentación académica del laboratorio de seguridad en aplicaciones web.
+Documentación académica de la práctica de seguridad en aplicaciones web.
 
-## Contenido
+El sitio contiene:
 
-El proyecto aborda conceptos relacionados con:
+- Preparación de Kali Linux en WSL.
+- Instalación y ejecución del laboratorio.
+- Reconocimiento con WhatWeb, Nikto y Nmap.
+- Pruebas manuales de SQL Injection, Stored XSS e IDOR.
+- Análisis con OWASP ZAP.
+- Ejecución de la versión segura.
+- Repetición de las pruebas para comprobar mitigaciones.
+- Comparación de resultados.
+- Glosario.
 
-- Seguridad en aplicaciones web.
-- OWASP Top 10.
-- SQL Injection.
-- Stored XSS.
-- IDOR.
-- OWASP ZAP.
-- Desarrollo seguro.
-- Comparación entre una aplicación vulnerable y una aplicación protegida.
-- Glosario de seguridad web.
+## Probar localmente
 
-## Documentación
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
 
-La documentación completa se encuentra publicada mediante GitHub Pages utilizando MkDocs Material.
+Abrir:
 
-## Uso académico
+```text
+http://127.0.0.1:8000
+```
 
-VaultStore fue desarrollado como entorno de laboratorio para el estudio de vulnerabilidades y mecanismos de mitigación dentro de un contexto académico.
+## Publicar en GitHub Pages
+
+```bash
+mkdocs gh-deploy --force
+```

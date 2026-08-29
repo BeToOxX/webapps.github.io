@@ -1,68 +1,63 @@
-# VaultStore Web Security Lab
+# Práctica de Seguridad en Aplicaciones Web
 
-## Seguridad en Aplicaciones Web
+## Seguridad y Auditoría de Sistemas
 
-Bienvenido a la documentación del laboratorio **VaultStore Web Security Lab**, desarrollado como parte de la práctica de **Seguridad y Auditoría de Sistemas**.
-
-El proyecto tiene como finalidad demostrar de forma controlada algunas de las vulnerabilidades más comunes que pueden encontrarse en aplicaciones web, así como analizar las medidas de seguridad necesarias para prevenirlas.
-
-Durante la práctica se utiliza una aplicación web denominada **VaultStore**, desarrollada específicamente para fines educativos y de laboratorio.
-
----
-
-## ¿Qué es VaultStore?
-
-**VaultStore** es una aplicación web utilizada como entorno controlado para estudiar conceptos relacionados con seguridad ofensiva, análisis de vulnerabilidades y desarrollo seguro.
-
-El laboratorio cuenta con dos enfoques principales:
-
-- **VaultStore Vulnerable:** aplicación preparada intencionalmente con vulnerabilidades.
-- **VaultStore Secure:** versión en la que se aplican controles para corregir o reducir las vulnerabilidades identificadas.
-
-Esto permite observar el comportamiento de una aplicación vulnerable y posteriormente comparar los resultados con una implementación que incorpora mecanismos de seguridad.
+**Laboratorio:** VaultStore Web Security Lab  
+**Entorno:** Windows + WSL 2 + Kali Linux  
+**Aplicaciones evaluadas:** versión vulnerable y versión segura  
+**Herramientas utilizadas:** WhatWeb, Nikto, Nmap y OWASP ZAP
 
 ---
 
-## Objetivos
+## 1. Introducción
 
-### Objetivo general
+Las aplicaciones web forman parte de la infraestructura tecnológica utilizada por organizaciones, instituciones y usuarios para acceder a sistemas, servicios y datos mediante un navegador. Debido a que estas aplicaciones pueden procesar información sensible, autenticación de usuarios y operaciones internas, es necesario evaluar sus controles de seguridad con el fin de identificar vulnerabilidades que puedan comprometer la confidencialidad, integridad o disponibilidad de la información.
 
-Analizar vulnerabilidades comunes presentes en aplicaciones web mediante un entorno controlado, identificando sus causas, posibles consecuencias y mecanismos de mitigación.
+En esta práctica se construyeron y evaluaron dos versiones de una aplicación web denominada **VaultStore**. La primera versión fue desarrollada deliberadamente con vulnerabilidades para fines académicos, mientras que la segunda incorpora controles de seguridad para mitigar los riesgos identificados. Ambas aplicaciones fueron analizadas en un entorno local y controlado.
 
-### Objetivos específicos
-
-- Comprender los fundamentos de la seguridad en aplicaciones web.
-- Conocer la importancia del proyecto OWASP.
-- Identificar vulnerabilidades comunes en aplicaciones web.
-- Analizar ataques de SQL Injection.
-- Comprender el funcionamiento de Stored XSS.
-- Identificar vulnerabilidades de control de acceso como IDOR.
-- Utilizar OWASP ZAP para realizar análisis de seguridad.
-- Comparar una aplicación vulnerable con una aplicación protegida.
-- Reconocer buenas prácticas de desarrollo seguro.
+!!! warning "Uso autorizado"
+    Todas las pruebas descritas en este documento deben realizarse exclusivamente contra aplicaciones propias o entornos donde exista autorización expresa.
 
 ---
 
-## Contenido
+## 2. Objetivos
 
-La documentación contiene los siguientes temas:
+### 2.1 Objetivo general
 
-- Introducción a la seguridad de aplicaciones web.
-- OWASP Top 10.
-- Herramientas de auditoría.
-- SQL Injection.
-- Stored Cross-Site Scripting.
-- IDOR.
-- OWASP ZAP.
-- Implementación de controles de seguridad.
-- Comparación entre aplicación vulnerable y segura.
-- Conclusiones.
-- Glosario de términos y siglas.
+Evaluar la seguridad de una aplicación web mediante herramientas de análisis y pruebas controladas, identificando vulnerabilidades y comparando los resultados obtenidos entre una versión vulnerable y una versión con controles de seguridad implementados.
+
+### 2.2 Objetivos específicos
+
+- Preparar un entorno de laboratorio utilizando Kali Linux sobre WSL.
+- Identificar tecnologías y servicios utilizados por la aplicación.
+- Detectar configuraciones inseguras mediante herramientas automatizadas.
+- Demostrar vulnerabilidades de forma controlada.
+- Implementar y comprobar controles de mitigación.
+- Comparar los resultados obtenidos entre ambas versiones.
 
 ---
 
-## Alcance del laboratorio
+## 3. Arquitectura del laboratorio
 
-Las actividades descritas en esta documentación fueron realizadas dentro de un entorno de laboratorio diseñado específicamente para fines educativos.
+| Aplicación | Puerto | Descripción |
+|---|---:|---|
+| VaultStore Vulnerable | 5000 | Aplicación deliberadamente insegura |
+| VaultStore Secure | 5001 | Aplicación con controles de seguridad |
 
-Las técnicas descritas permiten comprender cómo pueden originarse determinadas vulnerabilidades y por qué es importante implementar controles de seguridad durante el desarrollo de una aplicación web.
+```text
+Windows
+│
+├── Navegador web
+├── OWASP ZAP
+│
+└── WSL 2
+    └── Kali Linux
+        ├── Python / Flask
+        ├── WhatWeb
+        ├── Nikto
+        ├── Nmap
+        ├── VaultStore Vulnerable :5000
+        └── VaultStore Secure     :5001
+```
+
+La versión vulnerable permite comprobar fallas de seguridad de manera controlada, mientras que la versión segura permite repetir las mismas pruebas y verificar las mitigaciones implementadas.

@@ -1,5 +1,5 @@
 site_name: VaultStore Web Security Lab
-site_description: Documentación académica sobre seguridad y auditoría de aplicaciones web
+site_description: Práctica de Seguridad en Aplicaciones Web
 site_author: Seguridad y Auditoría de Sistemas
 
 theme:
@@ -19,19 +19,14 @@ theme:
 
 nav:
   - Inicio: index.md
-  - Presentación:
-      - Introducción: introduccion.md
-      - OWASP Top 10: owasp.md
-      - Herramientas de auditoría: herramientas.md
-  - Laboratorio:
-      - SQL Injection: sql-injection.md
-      - Stored XSS: stored-xss.md
-      - IDOR: idor.md
+  - Preparación del laboratorio: preparacion.md
+  - Reconocimiento:
+      - WhatWeb, Nikto y Nmap: reconocimiento.md
+  - Pruebas de seguridad:
+      - SQL Injection, XSS e IDOR: pruebas-manuales.md
       - OWASP ZAP: zap.md
-  - Seguridad:
-      - Aplicación segura: aplicacion-segura.md
-      - Comparación: comparacion.md
-      - Conclusiones: conclusiones.md
+  - Aplicación segura: aplicacion-segura.md
+  - Resultados y conclusiones: resultados.md
   - Glosario: glosario.md
 
 markdown_extensions:
