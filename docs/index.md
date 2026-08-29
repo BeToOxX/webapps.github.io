@@ -61,3 +61,13 @@ Windows
 ```
 
 La versión vulnerable permite comprobar fallas de seguridad de manera controlada, mientras que la versión segura permite repetir las mismas pruebas y verificar las mitigaciones implementadas.
+
+## Código QR del sitio
+
+<div align="center">
+
+Escanea el siguiente código para abrir la documentación:
+
+<img src="img/qr_docs.png" alt="Código QR del sitio" width="220">
+
+</div>
