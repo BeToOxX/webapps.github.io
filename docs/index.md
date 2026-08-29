@@ -1,80 +1,68 @@
-<div class="hero" markdown>
+# VaultStore Web Security Lab
 
-# Web Applications Security
+## Seguridad en Aplicaciones Web
 
-**Presentación + laboratorio práctico** de seguridad y auditoría de aplicaciones web.
+Bienvenido a la documentación del laboratorio **VaultStore Web Security Lab**, desarrollado como parte de la práctica de **Seguridad y Auditoría de Sistemas**.
 
-El sitio reúne en un mismo lugar la teoría necesaria para explicar qué es una aplicación web, los objetivos de un ataque, OWASP Top 10 y las herramientas de auditoría; además contiene el manual completo del laboratorio **ByteVault**, comparando una aplicación vulnerable contra una versión corregida.
+El proyecto tiene como finalidad demostrar de forma controlada algunas de las vulnerabilidades más comunes que pueden encontrarse en aplicaciones web, así como analizar las medidas de seguridad necesarias para prevenirlas.
 
-<div class="hero-badges">
-<span class="hero-badge">Kali Linux + WSL</span>
-<span class="hero-badge">WhatWeb</span>
-<span class="hero-badge">Nikto</span>
-<span class="hero-badge">Nmap</span>
-<span class="hero-badge">OWASP ZAP</span>
-<span class="hero-badge">SQL Injection</span>
-<span class="hero-badge">XSS</span>
-<span class="hero-badge">IDOR</span>
-</div>
+Durante la práctica se utiliza una aplicación web denominada **VaultStore**, desarrollada específicamente para fines educativos y de laboratorio.
 
-</div>
+---
 
-!!! warning "Entorno académico y controlado"
-    Las pruebas descritas en este sitio deben realizarse únicamente contra sistemas propios o para los cuales exista autorización expresa. En este laboratorio los ataques se ejecutan exclusivamente contra **ByteVault**, una aplicación creada deliberadamente para la práctica.
+## ¿Qué es VaultStore?
 
-<div class="grid cards" markdown>
+**VaultStore** es una aplicación web utilizada como entorno controlado para estudiar conceptos relacionados con seguridad ofensiva, análisis de vulnerabilidades y desarrollo seguro.
 
--   :material-presentation-play:{ .lg .middle } **Presentación**
+El laboratorio cuenta con dos enfoques principales:
 
-    ---
+- **VaultStore Vulnerable:** aplicación preparada intencionalmente con vulnerabilidades.
+- **VaultStore Secure:** versión en la que se aplican controles para corregir o reducir las vulnerabilidades identificadas.
 
-    Conceptos de Web Apps, arquitectura, seguridad, objetivos de ataque y OWASP Top 10:2025.
+Esto permite observar el comportamiento de una aplicación vulnerable y posteriormente comparar los resultados con una implementación que incorpora mecanismos de seguridad.
 
-    [:octicons-arrow-right-24: Ir a la presentación](presentacion/index.md)
+---
 
--   :material-shield-bug:{ .lg .middle } **Manual técnico**
+## Objetivos
 
-    ---
+### Objetivo general
 
-    Instalación, ejecución, reconocimiento y explotación controlada de ByteVault.
+Analizar vulnerabilidades comunes presentes en aplicaciones web mediante un entorno controlado, identificando sus causas, posibles consecuencias y mecanismos de mitigación.
 
-    [:octicons-arrow-right-24: Abrir el manual](manual/index.md)
+### Objetivos específicos
 
--   :material-shield-check:{ .lg .middle } **Comparación**
+- Comprender los fundamentos de la seguridad en aplicaciones web.
+- Conocer la importancia del proyecto OWASP.
+- Identificar vulnerabilidades comunes en aplicaciones web.
+- Analizar ataques de SQL Injection.
+- Comprender el funcionamiento de Stored XSS.
+- Identificar vulnerabilidades de control de acceso como IDOR.
+- Utilizar OWASP ZAP para realizar análisis de seguridad.
+- Comparar una aplicación vulnerable con una aplicación protegida.
+- Reconocer buenas prácticas de desarrollo seguro.
 
-    ---
+---
 
-    Diferencias entre la aplicación vulnerable y la aplicación segura.
+## Contenido
 
-    [:octicons-arrow-right-24: Ver resultados](resultados/index.md)
+La documentación contiene los siguientes temas:
 
--   :material-download:{ .lg .middle } **Archivos del laboratorio**
+- Introducción a la seguridad de aplicaciones web.
+- OWASP Top 10.
+- Herramientas de auditoría.
+- SQL Injection.
+- Stored Cross-Site Scripting.
+- IDOR.
+- OWASP ZAP.
+- Implementación de controles de seguridad.
+- Comparación entre aplicación vulnerable y segura.
+- Conclusiones.
+- Glosario de términos y siglas.
 
-    ---
+---
 
-    Descarga la aplicación y la presentación original.
+## Alcance del laboratorio
 
-    [:material-file-powerpoint: Presentación PPTX](assets/downloads/presentacion_webapps_seguridad.pptx){ .md-button }
-    [:material-folder-zip: ByteVault ZIP](assets/downloads/bytevault_web_security_lab_v2.zip){ .md-button }
+Las actividades descritas en esta documentación fueron realizadas dentro de un entorno de laboratorio diseñado específicamente para fines educativos.
 
-</div>
-
-## Recorrido recomendado
-
-<div class="flow">
-
-**1. Presentación → 2. Preparar Kali → 3. Levantar ByteVault vulnerable → 4. Reconocimiento → 5. SQLi/XSS/IDOR → 6. OWASP ZAP → 7. ByteVault segura → 8. Comparación y conclusiones**
-
-</div>
-
-## ¿Qué se busca demostrar?
-
-Una aplicación puede funcionar correctamente desde el punto de vista del usuario y, al mismo tiempo, contener vulnerabilidades graves. La práctica demuestra cómo los errores de desarrollo y configuración pueden permitir:
-
-- evadir autenticación;
-- ejecutar código en el navegador;
-- consultar información de otros usuarios;
-- exponer información del servidor;
-- reducir los controles de seguridad disponibles en el navegador.
-
-Después se aplican controles defensivos y se repiten las pruebas para comprobar la diferencia.
+Las técnicas descritas permiten comprender cómo pueden originarse determinadas vulnerabilidades y por qué es importante implementar controles de seguridad durante el desarrollo de una aplicación web.
